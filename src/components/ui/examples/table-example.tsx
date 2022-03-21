@@ -25,7 +25,7 @@ export const handleOnCloseModal =
 export const TableExample: FC = () => {
   const [indexExpandedRow, setIndexExpandedRow] = useState<number | null>(null)
   const { Modal, openModal, closeModal } = useModal()
-  const [properties, setProperties] = useState([])
+  // const [properties, setProperties] = useState([])
 
   const fetchProperties = async () => {
     const response = await fetch('https://platform.reapit.cloud/properties/?marketingMode=selling', {
@@ -38,7 +38,8 @@ export const TableExample: FC = () => {
     })
 
     const { _embedded } = await response.json()
-    setProperties(_embedded)
+    // setProperties(_embedded)
+    console.log(_embedded)
   }
 
   useEffect(() => {
